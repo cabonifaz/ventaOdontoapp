@@ -389,5 +389,34 @@
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => menu.classList.toggle('hidden'));
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // --- CONFIGURACIÓN: EDITA TUS NÚMEROS AQUÍ ---
+            const directorio = {
+                'default': '51919292352',  // Número por defecto
+                'pri': '51993765210'     // Ejemplo 1: ?asesor=juan
+
+            };
+            const parametro = 'asesor'; // El nombre del parámetro en la URL
+            // ----------------------------------------------
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const clave = urlParams.get(parametro);
+            const nuevoNumero = directorio[clave] || directorio['default'];
+
+            const enlacesWsp = document.querySelectorAll('a[href*="wa.me/"]');
+
+            enlacesWsp.forEach(link => {
+                // Reemplaza solo los dígitos después de wa.me/
+                link.href = link.href.replace(/wa\.me\/\d+/, `wa.me/${nuevoNumero}`);
+            });
+
+            if(clave && directorio[clave]) {
+                console.log(`Modo asesor activo: ${clave} (${nuevoNumero})`);
+            }
+        });
+    </script>
 </body>
 </html>
