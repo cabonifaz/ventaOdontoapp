@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pro - OdontoAPP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { DEFAULT: '#0076C6', light: '#e0f2fe', dark: '#005a9e' },
+                        ai: { DEFAULT: '#7c3aed', light: '#f3e8ff' },
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        danger: '#ef4444',
+                        dark: '#1e293b'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-700 font-sans antialiased">
+
+    <div class="min-h-screen flex flex-col md:flex-row">
+
+        <aside class="w-full md:w-64 bg-dark text-white flex-shrink-0 hidden md:flex flex-col">
+            <div class="p-6 flex items-center gap-2 border-b border-gray-700">
+                <div class="bg-brand text-white p-1.5 rounded-lg">
+                    <i class="fa-solid fa-tooth text-lg"></i>
+                </div>
+                <span class="text-lg font-bold tracking-tight">Odonto<span class="text-brand">APP</span></span>
+            </div>
+            
+            <nav class="flex-1 px-4 py-6 space-y-2">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 bg-brand rounded-xl text-white font-medium shadow-lg shadow-brand/20">
+                    <i class="fa-solid fa-chart-pie w-5"></i> Dashboard
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-calendar-days w-5"></i> Agenda
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-users w-5"></i> Pacientes
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-boxes-stacked w-5"></i> Almacén
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition">
+                    <i class="fa-solid fa-file-invoice-dollar w-5"></i> Facturación
+                </a>
+                
+                <div class="pt-4 pb-2">
+                    <p class="text-xs uppercase text-gray-500 font-bold px-4">Inteligencia Artificial</p>
+                </div>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-ai-light hover:bg-gray-800 rounded-xl transition">
+                    <i class="fa-solid fa-robot w-5"></i> Agentes IA <span class="ml-auto bg-ai text-white text-[10px] px-2 py-0.5 rounded-full">Activo</span>
+                </a>
+            </nav>
+
+            <div class="p-4 border-t border-gray-700">
+                <div class="flex items-center gap-3">
+                    <img src="https://ui-avatars.com/api/?name=Dr+Cris&background=0076C6&color=fff" class="w-10 h-10 rounded-full border-2 border-gray-600">
+                    <div>
+                        <p class="text-sm font-bold text-white">Dr. Cris</p>
+                        <p class="text-xs text-gray-400">Administrador</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-4 md:p-8 overflow-y-auto h-screen">
+            
+            <div class="md:hidden flex justify-between items-center mb-6 bg-white p-4 rounded-xl shadow-sm">
+                <div class="flex items-center gap-2">
+                    <div class="bg-brand text-white p-1.5 rounded">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <span class="font-bold text-dark">OdontoAPP</span>
+                </div>
+                <button class="text-gray-500"><i class="fa-solid fa-bars text-xl"></i></button>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-end md:items-center mb-8 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Panel de Control</h1>
+                    <p class="text-gray-500 text-sm">Resumen de operaciones - Noviembre 2025</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 shadow-sm transition">
+                        <i class="fa-solid fa-download mr-2"></i> Reporte
+                    </button>
+                    <button class="bg-brand text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-dark shadow-lg shadow-brand/30 transition">
+                        <i class="fa-solid fa-plus mr-2"></i> Nueva Cita
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden group hover:shadow-md transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Ingresos del Mes</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-1">S/ 12,450</h3>
+                        </div>
+                        <div class="p-3 bg-green-50 rounded-xl text-green-600 group-hover:bg-green-100 transition">
+                            <i class="fa-solid fa-sack-dollar text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="text-green-500 font-bold flex items-center"><i class="fa-solid fa-arrow-trend-up mr-1"></i> +12%</span>
+                        <span class="text-gray-400">vs mes anterior</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group hover:shadow-md transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Citas para Hoy</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-1">14</h3>
+                        </div>
+                        <div class="p-3 bg-blue-50 rounded-xl text-brand group-hover:bg-blue-100 transition">
+                            <i class="fa-solid fa-calendar-check text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="w-full bg-gray-100 rounded-full h-1.5 mt-2">
+                        <div class="bg-brand h-1.5 rounded-full" style="width: 60%"></div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-2">8 atendidos - 6 pendientes</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group hover:shadow-md transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Total Pacientes</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-1">1,245</h3>
+                        </div>
+                        <div class="p-3 bg-purple-50 rounded-xl text-purple-600 group-hover:bg-purple-100 transition">
+                            <i class="fa-solid fa-users text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs font-bold">+24 Nuevos</span>
+                        <span class="text-gray-400">esta semana</span>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-ai to-purple-700 p-6 rounded-2xl shadow-lg shadow-ai/20 text-white relative overflow-hidden transform hover:-translate-y-1 transition duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-white opacity-10 rounded-full -mr-6 -mt-6"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <p class="text-purple-100 text-sm font-medium flex items-center gap-2">
+                                    <i class="fa-solid fa-robot"></i> Agente IA
+                                </p>
+                                <h3 class="text-2xl font-bold mt-1">Auto-Pilot</h3>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mt-4">
+                            <div class="flex justify-between text-sm border-b border-white/20 pb-1">
+                                <span>Citas confirmadas:</span>
+                                <span class="font-bold">8 ✅</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Reprogramadas:</span>
+                                <span class="font-bold">2 🔄</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-[400px]">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg">Flujo de Citas</h3>
+                            <p class="text-xs text-gray-400">Últimos 7 días</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="flex items-center gap-1 text-xs text-gray-500"><span class="w-2 h-2 rounded-full bg-brand"></span> Agendadas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-1 relative flex items-end justify-between gap-4 px-2 pb-6 border-b border-l border-gray-100">
+                        
+                        <div class="absolute inset-0 flex flex-col justify-between pointer-events-none text-xs text-gray-300 pr-2">
+                            <div class="border-b border-gray-100 w-full h-0 flex items-center"><span class="-ml-6">30</span></div>
+                            <div class="border-b border-gray-100 w-full h-0 flex items-center"><span class="-ml-6">20</span></div>
+                            <div class="border-b border-gray-100 w-full h-0 flex items-center"><span class="-ml-6">10</span></div>
+                            <div class="w-full h-0 flex items-center"><span class="-ml-6">0</span></div>
+                        </div>
+
+                        <div class="relative z-10 w-full flex flex-col items-center gap-2 group h-full justify-end cursor-pointer">
+                            <div class="w-full bg-brand/80 rounded-t-md relative group-hover:bg-brand transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand/30" style="height: 40%;">
+                                <div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-dark text-white text-xs font-bold py-1 px-2 rounded transition-opacity shadow-lg">12</div>
+                            </div>
+                            <span class="text-xs text-gray-500 font-medium">Lun</span>
+                        </div>
+
+                        <div class="relative z-10 w-full flex flex-col items-center gap-2 group h-full justify-end cursor-pointer">
+                            <div class="w-full bg-brand/80 rounded-t-md relative group-hover:bg-brand transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand/30" style="height: 60%;">
+                                <div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-dark text-white text-xs font-bold py-1 px-2 rounded transition-opacity shadow-lg">18</div>
+                            </div>
+                            <span class="text-xs text-gray-500 font-medium">Mar</span>
+                        </div>
+
+                        <div class="relative z-10 w-full flex flex-col items-center gap-2 group h-full justify-end cursor-pointer">
+                            <div class="w-full bg-brand/80 rounded-t-md relative group-hover:bg-brand transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand/30" style="height: 50%;">
+                                <div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-dark text-white text-xs font-bold py-1 px-2 rounded transition-opacity shadow-lg">15</div>
+                            </div>
+                            <span class="text-xs text-gray-500 font-medium">Mié</span>
+                        </div>
+
+                        <div class="relative z-10 w-full flex flex-col items-center gap-2 group h-full justify-end cursor-pointer">
+                            <div class="w-full bg-brand/80 rounded-t-md relative group-hover:bg-brand transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand/30" style="height: 73%;">
+                                <div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-dark text-white text-xs font-bold py-1 px-2 rounded transition-opacity shadow-lg">22</div>
+                            </div>
+                            <span class="text-xs text-gray-500 font-medium">Jue</span>
+                        </div>
+
+                        <div class="relative z-10 w-full flex flex-col items-center gap-2 group h-full justify-end cursor-pointer">
+                            <div class="w-full bg-gradient-to-t from-brand to-cyan-500 rounded-t-md relative transition-all duration-300 group-hover:shadow-lg group-hover:shadow-cyan-500/30" style="height: 93%;">
+                                <div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-dark text-white text-xs font-bold py-1 px-2 rounded transition-opacity shadow-lg">28</div>
+                            </div>
+                            <span class="text-xs text-brand font-bold">Vie</span>
+                        </div>
+
+                        <div class="relative z-10 w-full flex flex-col items-center gap-2 group h-full justify-end cursor-pointer">
+                            <div class="w-full bg-brand/60 rounded-t-md relative group-hover:bg-brand transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand/30" style="height: 66%;">
+                                <div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-dark text-white text-xs font-bold py-1 px-2 rounded transition-opacity shadow-lg">20</div>
+                            </div>
+                            <span class="text-xs text-gray-500 font-medium">Sáb</span>
+                        </div>
+
+                         <div class="relative z-10 w-full flex flex-col items-center gap-2 group h-full justify-end cursor-pointer">
+                            <div class="w-full bg-gray-300 rounded-t-md relative group-hover:bg-gray-400 transition-all duration-300" style="height: 16%;">
+                                <div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-dark text-white text-xs font-bold py-1 px-2 rounded transition-opacity shadow-lg">5</div>
+                            </div>
+                            <span class="text-xs text-gray-500 font-medium">Dom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-[400px]">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800">Próximos Pacientes</h3>
+                        <button class="text-brand text-xs font-bold hover:underline">Ver Todo</button>
+                    </div>
+                    
+                    <div class="space-y-3 flex-1 overflow-y-auto pr-1">
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100 hover:bg-white hover:shadow-md transition cursor-pointer">
+                            <div class="bg-blue-100 text-brand w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm">JS</div>
+                            <div class="flex-1">
+                                <h4 class="text-sm font-bold text-gray-800">Juan Soto</h4>
+                                <p class="text-xs text-gray-500">Ortodoncia • 10:30 AM</p>
+                            </div>
+                            <i class="fa-solid fa-check-circle text-green-500"></i>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100 hover:bg-white hover:shadow-md transition cursor-pointer">
+                            <div class="bg-purple-100 text-purple-600 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm">MA</div>
+                            <div class="flex-1">
+                                <h4 class="text-sm font-bold text-gray-800">María Alva</h4>
+                                <p class="text-xs text-gray-500">Limpieza • 11:15 AM</p>
+                            </div>
+                            <i class="fa-solid fa-clock text-yellow-500"></i>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100 hover:bg-white hover:shadow-md transition cursor-pointer">
+                            <div class="bg-red-100 text-red-600 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm">CR</div>
+                            <div class="flex-1">
+                                <h4 class="text-sm font-bold text-gray-800">Carlos Ruiz</h4>
+                                <p class="text-xs text-gray-500">Extracción • 12:00 PM</p>
+                            </div>
+                            <i class="fa-solid fa-check-circle text-green-500"></i>
+                        </div>
+                         <div class="flex items-center gap-3 p-3 bg-white border border-dashed border-gray-300 rounded-xl opacity-60">
+                            <div class="bg-gray-100 text-gray-400 w-10 h-10 rounded-full flex items-center justify-center text-sm"><i class="fa-solid fa-mug-hot"></i></div>
+                            <div class="flex-1">
+                                <h4 class="text-sm font-bold text-gray-500">Almuerzo</h4>
+                                <p class="text-xs text-gray-400">13:00 PM - 14:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 pb-8">
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-gray-800 mb-6">Tratamientos más rentables</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-medium text-gray-700">Ortodoncia</span>
+                                <span class="text-gray-500">45%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-brand h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-medium text-gray-700">Implantes</span>
+                                <span class="text-gray-500">30%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-teal-500 h-2 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800">Alertas de Stock</h3>
+                        <span class="bg-red-100 text-red-600 text-xs px-2 py-1 rounded font-bold animate-pulse">2 Críticos</span>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 bg-red-50 border border-red-100 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-triangle-exclamation text-red-500"></i>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-800">Anestesia Tópica</p>
+                                    <p class="text-xs text-red-500">Quedan: 2 unidades</p>
+                                </div>
+                            </div>
+                            <button class="text-xs bg-white border border-red-200 text-red-600 px-3 py-1 rounded hover:bg-red-100">Reponer</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OdontoAPP - Software Cloud para Centros Odontológicos</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0076C6', 
+                            dark: '#005a9e',
+                            light: '#e6f1fa',
+                        },
+                        ai: {
+                            DEFAULT: '#8b5cf6', 
+                            light: '#f3e8ff'
+                        },
+                        sunat: {
+                            DEFAULT: '#ff5722', 
+                        },
+                        success: {
+                            DEFAULT: '#10b981',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+        }
+        .check-list li {
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-gray-700 bg-white antialiased">
+
+    <nav class="w-full py-3 md:py-4 border-b border-gray-100 fixed top-0 bg-white/95 backdrop-blur-md z-50">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            
+            <a href="#" class="flex items-center gap-2 mr-2">
+                <div class="bg-brand text-white p-1.5 md:p-2 rounded font-bold text-lg md:text-xl h-8 w-8 md:h-10 md:w-10 flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <span class="text-lg md:text-xl font-bold text-gray-800 leading-none">Odonto<span class="text-brand">APP</span></span>
+            </a>
+
+            <div class="flex items-center gap-3 md:gap-8">
+                
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#ventajas" class="hover:text-brand transition">¿Por qué nosotros?</a>
+                    <a href="#finanzas" class="hover:text-brand transition">Flujo de Caja</a>
+                    <a href="#precios" class="hover:text-brand transition">Planes</a>
+                </div>
+
+                <a 
+                    href="https://wa.me/51919292352?text=Hola,%20quisiera%20solicitar%20una%20demo%20de%20OdontoAPP" 
+                    target="_blank" 
+                    class="bg-brand hover:bg-brand-dark text-white text-xs px-3 py-2 md:text-sm md:px-5 md:py-2 rounded-full font-medium transition shadow-lg shadow-brand/30 whitespace-nowrap flex-shrink-0"
+                >
+                    Solicitar Demo
+                </a>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none ml-1">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl p-4 flex flex-col gap-4 text-center">
+            <a href="#ventajas" class="block py-2 hover:text-brand font-medium">Ventajas</a>
+            <a href="#finanzas" class="block py-2 hover:text-brand font-medium">Flujo de Caja</a>
+            <a href="#precios" class="block py-2 hover:text-brand font-medium">Planes</a>
+            </div>
+    </nav>
+
+    <header class="gradient-hero pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-bold border border-orange-200">
+                        <i class="fa-solid fa-gift"></i> Oferta: 2 Meses GRATIS
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-brand text-xs font-bold border border-blue-200">
+                        <i class="fa-solid fa-cloud"></i> Tecnología 100% Cloud
+                    </div>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                    Software Dental directo <span class="text-brand">de Fábrica.</span> Sin intermediarios.
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    Gestiona tu clínica, factura a SUNAT y <strong>controla tu flujo de caja real</strong>. Al ser desarrolladores, adaptamos el sistema a tu forma de trabajar.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#precios" class="bg-brand text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-dark transition shadow-xl shadow-brand/40 text-center">
+                        Ver Planes
+                    </a>
+                    <a 
+                        href="https://wa.me/51919292352?text=Hola,%20me%20interesa%20saber%20más%20sobre%20el%20sistema%20OdontoAPP" 
+                        target="_blank" 
+                        class="flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-gray-300 font-semibold hover:bg-gray-50 transition text-center"
+                    >
+                        <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i> Hablar con Desarrollador
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative w-full mt-8 lg:mt-0 group">
+                <div class="absolute -inset-2 bg-gradient-to-r from-brand/20 to-ai/20 rounded-2xl blur-2xl opacity-70 group-hover:opacity-100 transition duration-500"></div>
+
+                <img 
+                    src="image.png" 
+                    alt="Dashboard OdontoAPP" 
+                    class="relative w-full h-auto rounded-xl shadow-2xl border border-gray-200 z-10 bg-white">
+
+                <div class="absolute -bottom-6 -right-2 md:-right-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 z-20 animate-bounce" style="animation-duration: 4s;">
+                    <div class="bg-brand text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg shadow-brand/30">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wide">Soporte</p>
+                        <p class="font-bold text-gray-800 text-sm">SLA Inmediato ⚡</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="ventajas" class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                <div class="p-4">
+                    <div class="w-16 h-16 bg-brand/10 text-brand rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Somos Fabricantes</h3>
+                    <p class="text-sm text-gray-500">No somos revendedores. Si necesitas un cambio especial o una función a medida, nosotros lo programamos.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">SLA Rápido y Directo</h3>
+                    <p class="text-sm text-gray-500">Tu soporte es directo con el equipo de desarrollo. Resolvemos incidencias en tiempo récord, sin tickets eternos.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">100% Cloud Seguro</h3>
+                    <p class="text-sm text-gray-500">Accede desde tu casa, celular o consultorio. Nosotros nos encargamos de los servidores, copias de seguridad y seguridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="finanzas" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <div class="grid gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-brand">
+                        <h3 class="font-bold text-lg mb-2"><i class="fa-solid fa-wallet text-brand mr-2"></i> Flujo de Caja Total</h3>
+                        <p class="text-gray-600 text-sm">No todo es facturación electrónica. Gestiona tus ingresos en efectivo, gastos operativos (luz, agua, materiales) y ten claro cuánto gana realmente tu clínica.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sunat">
+                        <h3 class="font-bold text-lg mb-2"><i class="fa-solid fa-file-invoice-dollar text-sunat mr-2"></i> Facturación SUNAT Automática</h3>
+                        <p class="text-gray-600 text-sm">Olvídate de contratar facturadores. Emite boletas y facturas válidas con un clic. Envío automático y gestión de estados (CDR).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-bold mb-6">Tu dinero bajo control,<br> <span class="text-brand">hasta el último centavo.</span></h2>
+                <p class="text-gray-600 mb-6 text-lg">
+                    Muchos sistemas solo sirven para emitir facturas. OdontoAPP es una herramienta de <strong>gestión financiera</strong>.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <div class="bg-green-100 text-green-600 p-1 rounded-full"><i class="fa-solid fa-check"></i></div>
+                        <span>Reportes de rentabilidad por tratamiento.</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="bg-green-100 text-green-600 p-1 rounded-full"><i class="fa-solid fa-check"></i></div>
+                        <span>Control de pagos a doctores (Comisiones).</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="bg-green-100 text-green-600 p-1 rounded-full"><i class="fa-solid fa-check"></i></div>
+                        <span>Separación de Caja Chica vs. Ingresos Bancarios.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12">Gestión Integral basada en la operación real</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition">
+                    <i class="fa-solid fa-tooth text-4xl text-brand mb-4"></i>
+                    <h3 class="font-bold">Odontograma</h3>
+                    <p class="text-sm text-gray-500">Visual, interactivo y fácil de usar.</p>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition">
+                    <i class="fa-solid fa-boxes-stacked text-4xl text-brand mb-4"></i>
+                    <h3 class="font-bold">Stock y Almacén</h3>
+                    <p class="text-sm text-gray-500">Alertas cuando se te acaban los materiales.</p>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition">
+                    <i class="fa-solid fa-calendar-days text-4xl text-brand mb-4"></i>
+                    <h3 class="font-bold">Agenda Inteligente</h3>
+                    <p class="text-sm text-gray-500">Estados de cita y recordatorios.</p>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition">
+                    <i class="fa-solid fa-users text-4xl text-brand mb-4"></i>
+                    <h3 class="font-bold">Pacientes</h3>
+                    <p class="text-sm text-gray-500">Historia clínica completa y antecedentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precios" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Planes Transparentes</h2>
+                <p class="text-gray-600">Contratos anuales incluyen <span class="bg-yellow-100 text-yellow-800 px-2 font-bold rounded">2 Meses GRATIS</span> + Migración de Datos.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-brand transition">
+                    <h3 class="text-xl font-bold text-gray-800">Independiente</h3>
+                    <p class="text-sm text-gray-500 mb-6">Control total para 1 consultorio.</p>
+                    <div class="flex items-end mb-6">
+                        <span class="text-4xl font-bold text-brand">S/ 70</span>
+                        <span class="text-gray-500 ml-2 mb-1 text-sm">+ IGV / mes</span>
+                    </div>
+                    <a href="#" class="block w-full py-3 px-4 bg-white border-2 border-brand text-brand font-bold text-center rounded-lg hover:bg-brand hover:text-white transition">
+                        Empezar
+                    </a>
+                    <ul class="mt-8 space-y-4 text-sm text-gray-600 check-list">
+                        <li><i class="fa-solid fa-check text-brand mt-1"></i> 1 Sede / Consultorio</li>
+                        <li><i class="fa-solid fa-check text-brand mt-1"></i> <strong>Flujo de Caja + SUNAT</strong></li>
+                        <li><i class="fa-solid fa-check text-brand mt-1"></i> Usuarios Ilimitados</li>
+                        <li><i class="fa-solid fa-check text-brand mt-1"></i> Soporte Directo</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-2xl border-2 border-ai relative transform scale-105 z-10">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-ai text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
+                        <i class="fa-solid fa-robot"></i> Recomendado
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Plan Dúo</h3>
+                    <p class="text-sm text-gray-500 mb-6">Automatización con IA para 2 sedes.</p>
+                    <div class="flex items-end mb-6">
+                        <span class="text-4xl font-bold text-brand">S/ 130</span>
+                        <span class="text-gray-500 ml-2 mb-1 text-sm">+ IGV / mes</span>
+                    </div>
+                    <a href="#" class="block w-full py-3 px-4 bg-ai text-white font-bold text-center rounded-lg hover:bg-violet-700 transition">
+                        Contratar Anual
+                    </a>
+                    <ul class="mt-8 space-y-4 text-sm text-gray-600 check-list">
+                        <li><i class="fa-solid fa-check text-brand mt-1"></i> <strong>2 Sedes</strong></li>
+                        <li class="font-bold text-ai"><i class="fa-solid fa-wand-magic-sparkles mt-1"></i> Agentes IA incluidos</li>
+                        <li><i class="fa-solid fa-check text-brand mt-1"></i> Gestión centralizada</li>
+                        <li><i class="fa-solid fa-check text-brand mt-1"></i> Reportes consolidados</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-800">Corporativo</h3>
+                    <p class="text-sm text-gray-500 mb-6">Cadenas que necesitan personalización.</p>
+                    <div class="flex items-end mb-6">
+                        <span class="text-3xl font-bold text-gray-800">A medida</span>
+                    </div>
+                    <a href="#" class="block w-full py-3 px-4 bg-gray-800 text-white font-bold text-center rounded-lg hover:bg-black transition">
+                        Contactar Fabricante
+                    </a>
+                    <ul class="mt-8 space-y-4 text-sm text-gray-600 check-list">
+                        <li><i class="fa-solid fa-check text-gray-800 mt-1"></i> 3+ Sedes</li>
+                        <li><i class="fa-solid fa-code text-gray-800 mt-1"></i> <strong>Desarrollo a Medida</strong></li>
+                        <li><i class="fa-solid fa-server text-gray-800 mt-1"></i> Integraciones API</li>
+                        <li><i class="fa-solid fa-headset text-gray-800 mt-1"></i> SLA Prioritario</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-sm text-gray-500">
+                    <i class="fa-solid fa-lock mr-1"></i> Tu información está segura con copias de seguridad automáticas diarias en la nube.
+                </p>
+            </div>
+        </div>
+    </section>
+
+<footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-brand">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <div class="grid md:grid-cols-3 gap-12 mb-12 text-sm">
+                
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="text-brand text-2xl">
+                            <i class="fa-solid fa-tooth"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Odonto<span class="text-brand">APP</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        La solución integral para centros odontológicos. Desarrollado por <strong><a target="_blank" href=https://geeky-tech.es/>Geeky Tech</a></strong>, somos fabricantes de software comprometidos con tu crecimiento.
+                    </p>
+                    <div class="flex items-center gap-3 text-green-400 font-bold">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Data Encriptada & Segura</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 border-b border-gray-700 pb-2 inline-block">Garantía de Datos</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-file-shield text-brand mt-1"></i>
+                            <span><strong>Contrato NDA:</strong> Firmamos acuerdos de confidencialidad para proteger tu información sensible y la de tus pacientes.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-user-shield text-brand mt-1"></i>
+                            <span><strong>Privacidad Total:</strong> Tu base de datos es tuya. Garantizamos que nadie más tenga acceso a tus registros.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-server text-brand mt-1"></i>
+                            <span><strong>Backups Diarios:</strong> Copias de seguridad automáticas para que nunca pierdas una historia clínica.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 border-b border-gray-700 pb-2 inline-block">Servicio Premium</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-bolt text-yellow-400 mt-1"></i>
+                            <span><strong>Protocolos SLA:</strong> Tiempos de respuesta garantizados y soporte directo con ingenieros.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-code-branch text-blue-400 mt-1"></i>
+                            <span><strong>Personalización:</strong> Adaptamos el software a tus flujos especiales.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-rocket text-purple-400 mt-1"></i>
+                            <span><strong>Mejora Continua:</strong> Todas las actualizaciones y nuevas funciones se implementan gratis para tu beneficio.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p>&copy; 2025 <a target="_blank" href=https://geeky-tech.es/>Geeky Tech</a>. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-brand transition">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-brand transition">Política de Privacidad</a>
+                    <a href="#" class="hover:text-brand transition">Acuerdo de Nivel de Servicio (SLA)</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    </script>
+</body>
+</html>
